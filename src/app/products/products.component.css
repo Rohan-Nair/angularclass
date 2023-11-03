@@ -1,0 +1,31 @@
+#prod{
+    
+    color: black;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#image1{
+    height: 350px;
+    width: 500px;
+}
+#Buy{
+    background-color: blue;
+    color: white;
+    width: 200px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:  all ease-in-out 0.3s;
+}
+#Buy:hover{
+    transform: translateY(-1px);
+    transform: scaleX(1.05) translateY(-5px);
+   
+   
+    
+}

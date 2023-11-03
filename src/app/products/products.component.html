@@ -1,0 +1,27 @@
+<div id="prod">
+    <h1 style="text-decoration: underline;">Product Details</h1>
+    <h2>Product Name: {{product.name}}</h2>
+    <img src="./assets/samsung.jpg" id="image1">
+    <h3 style="padding: 0;">Price: {{product.Price}}</h3>
+    <h3 style="padding: 0;">GST: {{product.GST}}</h3>
+    <hr width="40%" size="2" color="black" align="center">
+    <h3><b>Total: {{product.Price+product.GST}}</b></h3>
+    <hr width="40%" size="2" color="black" align="center">
+    <h3>Quantity: {{product.inStock>0?product.inStock + " items left": "Out of stock"}}</h3>
+    <h1 *ngif="product.inStock>0; else elseblock">{{product.inStock+" items left"}}</h1>
+    <ng-template #elseblock>Out of stock</ng-template>
+
+    <div style="display: flex; flex-direction: row;">
+    <button (click)="decreasequantity()">-</button>
+    {{quantity}}
+    <button (click)="increasequantity()">+</button>
+    </div>
+    <br>
+    <button [disabled]="!(product.inStock>0)" id="Buy">Buy Now</button>
+
+    <input (mouseover)="changeproductname()" (mouseout)="changeproductname2()" type="text" value="{{product.name}}">
+    <button [ngStyle]="{'background-color':product.inStock>0?'green':'red','color':'white'}">Address</button>
+    <button [ngStyle]="applyStyles()">Deliver to this address</button>
+    <h4 *ngFor="let x of reviewList">{{x.name}}---->{{x.review}}</h4>
+
+</div>
