@@ -2,29 +2,29 @@
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <p>
           <label for="firstname">First Name</label>
-          <input type="text" name="firstname" placeholder="FIRST NAME" ngModel>
+          <input type="text" name="firstname" placeholder="FIRST NAME" formControlName="firstname">
         </p>
         <p>
           <label for="lastname">Last Name</label>
-          <input type="text" name="lastname" placeholder="LAST NAME" ngModel>
+          <input type="text" name="lastname" placeholder="LAST NAME" formControlName="lastname">
         </p>
     
         <p>
           <label for="email">Email</label>
-          <input type="text" name="email" placeholder="example@gmail.com" ngModel>
+          <input type="text" name="email" placeholder="example@gmail.com" formControlName="email">
         </p>
         <p>
           <label for="gender">Gender</label>
-          <input type="radio" title="radio" name="gender" value="Male" ngModel>Male
-          <input type="radio" name="gender" value="Female" title="radio" ngModel>Female
+          <input type="radio" title="radio" name="gender" value="Male" formControlName="gender">Male
+          <input type="radio" name="gender" value="Female" title="radio" formControlName="gender">Female
         </p>
         <p>
           <label for="isMarried">Married</label>
-          <input type="checkbox" name="isMarried" placeholder="." ngModel>
+          <input type="checkbox" name="isMarried" placeholder="." formControlName="Married">
         </p>
         
           <label for="Country">Country</label>
-          <select name="country" ngModel title="option">
+          <select name="country" title="option" formControlName="country">
             <option [ngValue]="c.name" *ngFor="let c of countryList">
               {{c.name}}
             </option>

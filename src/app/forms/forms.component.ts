@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyserviceService } from '../myservice.service';
 
 
 @Component({
@@ -18,6 +19,10 @@ export class FormsComponent {
 
     onSubmit(contactForm: any) {
       console.log(contactForm);
+    }
+    OnClicked(){
+      let someservice = new MyserviceService();
+      someservice.OnClicked();
     }
 
 }
