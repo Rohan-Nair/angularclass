@@ -7,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
-  post:any;
+  posts:any;
   constructor(private http:HttpClient){}
 
     ngOnInit(): void{
       this.http.get("https://jsonplaceholder.typicode.com/posts").subscribe((data)=>this.displayPost(data))
     }
     displayPost(data:any){
-      this.post = data;
+      this.posts = data;
     }
   }
 
